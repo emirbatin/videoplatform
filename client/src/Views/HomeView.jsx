@@ -26,7 +26,6 @@ const HomeView = () => {
   const [featuredLoading, setFeaturedLoading] = useState(true);
   const itemsPerPage = 8;
 
-
   useEffect(() => {
     const fetchVideos = async () => {
       setLoading(true);
@@ -137,30 +136,11 @@ const HomeView = () => {
           )}
         </div>
 
-        {/* Categories */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center gap-4 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800 pb-2">
-            {categories.map((category) => (
-              <button
-                key={category.id || "all"}
-                onClick={() => handleCategoryChange(category.id)}
-                className={`px-4 py-2 rounded-lg whitespace-nowrap transition-colors ${
-                  selectedCategory === category.id
-                    ? "bg-indigo-600 text-white"
-                    : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                }`}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* Main Content with Side Ad */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="w-full">
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-2">
                   <TrendingUp className="w-6 h-6" />
                   All Content
@@ -173,6 +153,25 @@ const HomeView = () => {
                   See All
                 </Link>
               </div>
+
+              {/* Categories */}
+              <div className="max-w-7xl mx-auto py-6">
+                  <div className="flex items-center gap-4 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800 pb-2">
+                    {categories.map((category) => (
+                      <button
+                        key={category.id || "all"}
+                        onClick={() => handleCategoryChange(category.id)}
+                        className={`px-4 py-2 rounded-lg whitespace-nowrap transition-colors ${
+                          selectedCategory === category.id
+                            ? "bg-indigo-600 text-white"
+                            : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+                        }`}
+                      >
+                        {category.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
 
               <VideoGrid videos={videos} loading={loading} error={error} />
 
