@@ -2,6 +2,35 @@
 
 A modern and user-friendly video sharing platform where administrators can manage and present cross-platform (YouTube, Google Drive, Vimeo, Dailymotion) video content from a single dashboard.
 
+## 📸 Preview
+
+<div align="center">
+  <img src="preview/dashboard.png" alt="Dashboard" width="800">
+</div>
+
+<details>
+<summary>📷 More Screenshots</summary>
+
+### Content Management
+<img src="preview/upload-content.png" alt="Content Upload" width="400">
+<img src="preview/edit-content.png" alt="Content Edit" width="400">
+
+### Video Player & Platforms
+<img src="preview/video-player.png" alt="Video Player" width="400">
+<img src="preview/platform-selection.png" alt="Platform Selection" width="400">
+
+### Admin Features
+<img src="preview/content-list.png" alt="Content List" width="400">
+<img src="preview/categories.png" alt="Categories" width="400">
+
+### Mobile Views
+<div>
+  <img src="preview/mobile-home.png" alt="Mobile Home" width="200">
+  <img src="preview/mobile-player.png" alt="Mobile Player" width="200">
+</div>
+
+</details>
+
 ## 🚀 Features
 
 - **Multi-Platform Support**
