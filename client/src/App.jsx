@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import HomeView from "./Views/HomeView";
 import AdminView from "./Views/AdminView";
 import ContentView from "./Views/ContentView";
@@ -14,24 +14,15 @@ import AllContentView from "./Views/AllContentView";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <AuthProvider>
-        <div className="">
+        <div className="app-container">
           <Routes>
             <Route path="/" element={<HomeView />} />
-
             <Route path="/content" element={<ContentView />} />
-
-            <Route
-              path="/content"
-              element={<Navigate to="/content" replace />}
-            />
-
             <Route path="/category/:id" element={<HomeView />} />
             <Route path="/videos" element={<AllContentView />} />
-
             <Route path="/search" element={<SearchResultPage />} />
-
             <Route path="/login" element={<LoginView />} />
             <Route
               path="/admin/*"
@@ -57,7 +48,6 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
             <Route
               path="*"
               element={
@@ -78,7 +68,7 @@ function App() {
           </Routes>
         </div>
       </AuthProvider>
-    </BrowserRouter>
+    </Router>
   );
 }
 
